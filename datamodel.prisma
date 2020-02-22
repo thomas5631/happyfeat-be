@@ -1,0 +1,27 @@
+type User {
+    id: ID! @id
+    username: String! @unique
+    email: String! @unique
+    name: String
+    createdAt: DateTime! @createdAt
+    updatedAt: DateTime! @updatedAt
+    organization: Organization! @relation(link: INLINE)
+    featureFlags: [FeatureFlag!]!
+}
+
+type Organization {
+    id: ID! @id
+    name: String!
+    createdAt: DateTime! @createdAt
+    updatedAt: DateTime! @updatedAt
+    members: [User!]!
+}
+
+type FeatureFlag {
+    id: ID! @id
+    name: String!
+    description: String
+    createdAt: DateTime! @createdAt
+    updatedAt: DateTime! @updatedAt
+    owner: Organization! @relation(link: INLINE)
+}

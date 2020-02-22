@@ -1452,6 +1452,8 @@ export const models: Model[] = [
 export const Prisma = makePrismaClientClass<ClientConstructor<Prisma>>({
   typeDefs,
   models,
-  endpoint: `${process.env["PRISMA_ENDPOINT"]}`
+  endpoint: `${process.env["PRISMA_ENDPOINT"]}/${
+    process.env["PRISMA_DATABASE"]
+  }/${process.env["PRISMA_STAGE"]}`
 });
 export const prisma = new Prisma();

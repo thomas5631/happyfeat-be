@@ -14,7 +14,7 @@
         "test": "jest"
     },
     "dependencies": {
-        "@sentry/integrations": "^5.12.4",
+        "@sentry/integrations": "^5.15.4",
         "@sentry/node": "^5.12.4",
         "apollo-server": "^2.9.16",
         "apollo-server-plugin-base": "^0.6.10",
